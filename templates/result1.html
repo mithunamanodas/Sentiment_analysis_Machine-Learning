@@ -1,0 +1,50 @@
+
+
+
+
+
+{% extends "template.html" %}
+{% block content %}
+
+<section id="pricing" class="pricing">
+  <div class="container">
+
+    <div class="section-title">
+      
+      <h2>IMDB Review Sentiment Analysis</h2>
+      <p><strong>Results for Comment:</strong>" {{getData}} "</p>
+    </div>
+
+    <div class="row" style="text-align: center;justify-content: center;">
+
+      
+  {% if prediction == 1%}
+      <div data-aos="zoom-in" class="col-8 mt-4 mt-md-0 aos-init aos-animate" style="/*! background: black; */">
+        <div class="box featured" style="background: #35d209;">
+          
+          <h4 class="m-4">Positive  Review (Movie is good)</h4>
+          
+          <div class="btn-wrap">
+            <a href="{{ url_for('home')}}" class="btn-buy">Go To Back</a>
+          </div>
+        </div>
+      </div>
+  {% elif prediction == 0%}
+  <div data-aos="zoom-in" class="col-8 mt-4 mt-md-0 aos-init aos-animate" style="/*! background: black; */">
+    <div class="box featured" style="background: red;">
+      
+      <h4 class="m-4">Negative Review (Movie is bad)</h4>
+      
+      <div class="btn-wrap">
+        <a href="{{ url_for('home')}}" class="btn-buy">Go To Back</a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+    </div>
+
+  </div>
+</section>
+{% endblock %}
+

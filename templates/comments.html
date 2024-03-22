@@ -1,0 +1,89 @@
+{% extends "template.html" %}
+{% block content %}
+<style> 
+  table thead tr th{
+    border: 1px solid black;
+    padding: 10px;
+  }
+  table tbody tr td{
+    border: 1px solid black;
+    padding: 10px;
+  }
+</style>
+<section id="contact" class="contact pb-2">
+  <div class="container mb-5">
+
+    <div class="section-title">
+      
+      <h2>Sentiment Analysis of Comments</h2>
+      
+    </div>
+
+    
+
+    <div class="row aos-init aos-animate" data-aos="fade-up">
+
+      
+
+      <div class="col-lg-12">
+        <form action="{{ url_for('goto')}}" method="POST" class="php-email-form">
+          
+          
+          <div class="form-group mt-3" style="border: 1px solid #cc1616;">
+            <textarea class="form-control" name="comment" rows="6" cols="50" required="required" id="" placeholder="Enter Your review Here"></textarea>
+          </div>
+          
+          <div class="text-center mt-3 mr-2 ml-2"><button type="submit" >Get Review</button></div>
+         
+        </form>
+        {% if set %}
+        <div class="row mt-5" style="text-align: center;justify-content: center;">
+
+
+              <div data-aos="zoom-in" class="col-8 mt-4 mt-md-0 aos-init aos-animate" style="/*! background: black; */">
+                <div class="box featured p-4" style="background: #f9f0f0;">
+                  
+                  <h4 class="m-4">"{{comment}}"</h4>
+                  <p style="font-size: 50px;">{{senti}}</p>
+                  
+                <div class="text-center mt-3 mr-2 ml-2"><a href="/savecsv">Save to CSV and View</a></div></div>
+              </div>
+        </div>
+        {% endif %}
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section class="pt-0">
+  <div data-target="readme-toc.content" class="Box-body px-5 pb-5">
+  <article class="markdown-body entry-content container-lg" itemprop="text">
+    
+
+<p dir="auto">Sentiment analysis on comments is a process of analyzing the emotional tone and opinions expressed in comments data. It involves using various algorithms to classify comments into positive, negative, or neutral sentiment categories. Here is an overview of the documentation of sentiment analysis on comments:</p>
+
+<h3 tabindex="-1" dir="auto" class="mt-4"><em>Data Collection</em></h3>
+<p dir="auto"> The first step in sentiment analysis on comments is to collect the data from various sources such as social media platforms, customer feedback forms, and online forums. The data should be representative of the target audience and should cover a broad range of topics.</p>
+
+<h3 tabindex="-1" dir="auto" class="mt-4"><em>Data Preprocessing</em></h3>
+<p dir="auto">Once the data is collected, it needs to be preprocessed. This involves cleaning the data by removing stop words, punctuations, and special characters. The data is then tokenized, which means breaking down the text into individual words. This step helps to reduce the complexity of the data and makes it easier to analyze.</p>
+
+<h3 tabindex="-1" dir="auto" class="mt-4"><em>Sentiment classification</em></h3>
+<p dir="auto"> The next step is to classify the comments into positive, negative, or neutral sentiment categories. This can be done using various algorithms such as rule-based systems, machine learning, and deep learning models. Each algorithm has its own strengths and weaknesses, and the choice of algorithm depends on the specific use case.</p>
+
+<h3 tabindex="-1" dir="auto" class="mt-4"><em>Evaluation</em></h3>
+<p dir="auto">After the sentiment classification is done, the results need to be evaluated to determine the accuracy and effectiveness of the algorithm. This can be done using various metrics such as precision, recall, and F1 score. The evaluation helps to identify areas where the algorithm can be improved and optimized.</p>
+<h3 tabindex="-1" dir="auto" class="mt-4"><em>Visualization</em></h3>
+<p dir="auto">The sentiment analysis results can be visualized using various tools such as charts, graphs, and dashboards. Visualization helps to gain insights into the sentiment trends and patterns in the data.</p>
+
+
+
+
+</article>
+</div>
+
+
+</section>
+{% endblock %}
+

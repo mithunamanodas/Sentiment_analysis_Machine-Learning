@@ -1,0 +1,38 @@
+{% extends "template.html" %}
+{% block content %}
+
+<section id="about" class="about">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left">
+          <img src="{{url_for('static', filename='assets/img/ai1.jpg')}}" class="img-fluid" alt="" style="height: 100%;width: 100%;object-fit: cover;border-radius: 6px;">
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
+          <h3>SENTIMENTAL ANALYSIS BASED ON MACHINE LEARNING.</h3>
+          <p class="fst-italic">
+            Sentiment analysis, also known as opinion mining, is an important business intelligence tool.It is the process of classifying whether a block of text is positive, negative, or, neutral. 
+
+
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> Sentiment analysis looks at the emotion expressed in a text. This include IMDB comments and Youtube comments.</li>
+            <li><i class="bi bi-check-circle"></i>IMDB Sentiment analysis predicit what type of comments are given,whether it is positive or negative comments.</li>
+            <li><i class="bi bi-check-circle"></i>Youtube comments section analysis the comments and classify them based on their emotions shows in it. It includes positive,negative or neutral comments.</li>
+          </ul>
+          <p>
+            Sentiment analysis is the use of natural language processing, text analysis, computational linguistics, and biometrics to systematically identify, extract, quantify and study affective states and subjective information. It is widely applied to voice of the customer materials such as reviews and survey responses, online and social media.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+{% endblock %}

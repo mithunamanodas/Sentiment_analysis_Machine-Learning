@@ -1,0 +1,172 @@
+{% extends "template.html" %}
+{% block content %}
+<style> 
+  table thead tr th{
+    border: 1px solid black;
+    padding: 10px;
+  }
+  table tbody tr td{
+    border: 1px solid black;
+    padding: 10px;
+  }
+</style>
+<section id="contact" class="contact pb-2">
+  <div class="container mb-5">
+
+    <div class="section-title">
+      
+      <h2>IMDB Review Sentiment Analysis</h2>
+      
+    </div>
+
+    
+
+    <div class="row aos-init aos-animate" data-aos="fade-up">
+
+      
+
+      <div class="col-lg-12">
+        <form action="{{ url_for('predict')}}" method="POST" class="php-email-form">
+          
+          
+          <div class="form-group mt-3" style="border: 1px solid #cc1616;">
+            <textarea class="form-control" name="Reviews" rows="6" cols="50" required="required" id="" placeholder="Enter Your review Here"></textarea>
+          </div>
+          
+          <div class="text-center mt-3 mr-2 ml-2"><button type="submit" >Get Review</button></div>
+         
+        </form>
+        
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section class="pt-0">
+  <div data-target="readme-toc.content" class="Box-body px-5 pb-5">
+  <article class="markdown-body entry-content container-lg" itemprop="text"><h1 tabindex="-1" dir="auto">Sentiment analysis of IMDb movie reviews: a study on features selection &amp; classification algorithms</h1>
+    
+<h2 tabindex="-1" dir="auto" class="mt-4">INTRODUCTION</h2>
+<p dir="auto"><strong>IMDb (Internet Movie Database)</strong> is an online database of information related to films, television programs, home videos, video games, and streaming content online – including cast, production crew and personal biographies, plot summaries, trivia, fan and critical reviews, and ratings. An additional fan feature, message boards, was abandoned in February 2017. Originally a fan-operated website, the database is owned and operated by IMDb.com, Inc., a subsidiary of Amazon.
+By late 1990, the lists included almost 10,000 movies and television series correlated with actors and actresses appearing therein. On October 17, 1990, Needham developed and posted a collection of Unix shell scripts which could be used to search the four lists, and thus the database that would become the IMDb was born.At the time, it was known as the <code>rec.arts.movies movie database</code>.
+Internet Movie Database users are invited to participate in the site's ever-growing wealth of information by rating movies on a rating scale.
+The labeled dataset consists of 50,000 IMDB movie reviews. No individual movie has more than 30 reviews. The 25,000 reviews labeled training set does not include any of the same movies as the 25,000 review test set.</p>
+<div class="text-left mt-3 mr-2 ml-2"><a href="/imdb-home-view" >View Dataset</a></div>
+<h3 tabindex="-1" dir="auto" class="mt-4"><em>There are three columns in the movie review dataset</em></h3>
+<ul dir="auto">
+<li>Id</li>
+<li>Review</li>
+<li>Sentiment</li>
+</ul>
+<h3 tabindex="-1" dir="auto" class="mt-4"><em>There are two classes in the movie review dataset</em></h3>
+<ul dir="auto">
+<li>1 : &gt;= 7 rating</li>
+<li>0: &lt;5 rating</li>
+</ul>
+<h3 tabindex="-1" dir="auto" class="mt-4"><em>This project explores the applicability of machine learning based classification techniques</em></h3>
+<ol dir="auto">
+<li>Logistic Regression</li>
+<li>Decision Tree</li>
+<li>Random Forest</li>
+<li>Gaussian Naïve Bayes &amp; Multinomial Naïve Bayes</li>
+<li>K-Nearest Neighbor</li>
+<li>SMV – Support Vector Machine</li>
+</ol>
+<p dir="auto">We are going to determine that feature selection improves the performance of sentiment based classification, but it depends on the method adopted and the number of feature selected. The experimental results presented in this project show that Logistic Regression performs better than other techniques for sentiment based classification.</p>
+<h2 tabindex="-1" dir="auto" class="mt-4">Models Performance Summary</h2>
+<table style="width: 100%;text-align: left;">
+<thead>
+<tr>
+<th>Models</th>
+<th>Additional conditions</th>
+<th>Accuracy (before features selection)</th>
+<th>Accuracy (after features selection)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Logistic Regression</strong> *</td>
+<td>---</td>
+<td><strong>0.884</strong></td>
+<td><strong>0.8881481481481481</strong></td>
+</tr>
+<tr>
+<td>Logistic Regression</td>
+<td><code>chi2, k=45000</code></td>
+<td>---</td>
+<td>0.7644444444444445</td>
+</tr>
+<tr>
+<td>Decision Tree</td>
+<td>---</td>
+<td>0.7094814814814815</td>
+<td><strong>0.7197037037037037</strong></td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>default</td>
+<td>0.7585185185185185</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td><code>n_estimators = 200</code></td>
+<td>0.8428148148148148</td>
+<td><strong>0.8573333333333333</strong></td>
+</tr>
+<tr>
+<td>KNN</td>
+<td><code>k=71</code></td>
+<td>0.8065185185185185</td>
+<td><strong>0.8139259259259259</strong></td>
+</tr>
+<tr>
+<td>SVM</td>
+<td><code>C=1</code></td>
+<td>0.8814814814814815</td>
+<td><strong>0.8837037037037037</strong></td>
+</tr>
+<tr>
+<td>SVM</td>
+<td><code>C=3</code></td>
+<td>0.8765925925925926</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Multinomial Gaussian Naive Bayes</td>
+<td>---</td>
+<td>0.8622222222222222</td>
+<td>0.8622222222222222</td>
+</tr>
+<tr>
+<td>Gaussian Naive Bayes</td>
+<td>---</td>
+<td>0.6687407407407407</td>
+<td><strong>0.6688888888888889</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 tabindex="-1" dir="auto" class="mt-4">CONCLUSION</h2>
+<ul dir="auto">
+<li>Sentiment classification methods above identify texts from the review dataset according to the users opinions toward movies, which are both negative and positive. The extracted data is further enhanced using feature classification techniques and these methopologies facilitate the keywords from the users reviews. After training and testing the dataset, <strong>Logistic Regression</strong> has the <strong>best result</strong> compared to the other methods.</li>
+<li>We successfully <strong>improve the accuracy</strong> of our baseline models by <strong>adding more stop words</strong>.</li>
+</ul>
+</article>
+</div>
+
+
+</section>
+<!-- <section id="cta" class="cta">
+  <div class="container" data-aos="zoom-in">
+
+    <div class="text-center">
+      <h3>What is IMDb?</h3>
+      <p> Stands for Internet Movies Database. The Internet Movie Database is an online database of information related to films, television programs, and video ...</p>
+      <a class="cta-btn" href="https://en.wikipedia.org/wiki/IMDb">Go To</a>
+    </div>
+
+  </div>
+</section> -->
+{% endblock %}
+

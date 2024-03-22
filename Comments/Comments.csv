@@ -1,0 +1,54 @@
+,review,sentiment
+0,good,positive
+1,bad,negative
+2,not bad,positive
+3,wonderful,good
+4,too bad,negative
+5,wow,positive
+6,nice,positive
+7,superrr,positive
+8,review,sentiment
+9,wonderfull movie,Neutral
+10,super movie,Positive
+11,nice movie,Positive
+12,nice movie,Positive
+13,nice movie and good,Positive
+14,nice movie and good,Positive
+15,nice movie and good,Positive
+16,good movie,Positive
+17,good,Positive
+18,good,Positive
+19,good,Positive
+20,bad,Negative
+21,not bad,Positive
+22,too bad,Negative
+23,wow,Positive
+24,wonderful movie,Positive
+25,good film,Positive
+26,This is a good movie. wonderful story and nice acting.,Positive
+27,the movie is wonderfull,Neutral
+28,It is bad,Negative
+29,The movie is bad acting is worst that i have ever seen,Negative
+30,good movie,Positive
+31,the movie beautiful,Positive
+32,the movie is beautiful,Positive
+33,it is a worst film,Negative
+34,this is a worst film,Negative
+35,this not good,Negative
+36,"bad movie
+",Negative
+37,the movie is beautiful,Positive
+38,this a good movie,Positive
+39,this is a bore movie,Neutral
+40,this is bad,Negative
+41,good,Positive
+42,this is good,Positive
+43,this is a nice movie,Positive
+44,tis movie is awsome,Neutral
+45,This movie is great,Positive
+46,movie is good,Positive
+47,this is good movie,Positive
+48,this is bad movie,Negative
+49,this movie is good,Positive
+50,this movie is good,Positive
+51,this movie is good,Positive

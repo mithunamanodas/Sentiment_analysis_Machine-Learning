@@ -1,0 +1,46 @@
+
+{% extends "template2.html" %}
+{% block content %}
+<section id="pricing" class="pricing mt-5 mb-5">
+    <div class="container">
+      <div class="section-title">
+        <h2>DataSet of Pest Prediction  </h2>
+        <!-- <p>Prediction in Agriculture,
+          Crop yield prediction is one of the challenging tasks in agriculture. It plays an essential role in decision making at global, regional, and field levels. The prediction of crop yield is based on soil, meteorological, environmental, and crop parameters.
+          </p> -->
+      </div>
+      <div class="row">
+          <table class="table table-bordered table-dark" id="demo">
+              <thead>
+                <tr class="pl-3 pr-3">
+                  
+                  <th scope="col">Review</th>
+                  <th scope="col">Sentiment </th>
+                  
+                  
+                </tr>
+              </thead>
+              <tbody>  
+                {% for value in stocklist %}
+                <tr>
+                 
+                  <td>{{ value[0] |safe }}</td>
+                  <td>{{ value[1] }}</td>
+                  
+                </tr>
+                {% endfor %}
+              </tbody>
+           </table> 
+
+        
+        
+        
+        
+        
+        
+
+      </div>
+
+    </div>
+  </section>
+  {% endblock %}

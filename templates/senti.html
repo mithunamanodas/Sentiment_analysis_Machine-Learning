@@ -1,0 +1,51 @@
+{% extends "template.html" %}
+{% block content %}
+
+<section id="services" class="services">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Sentiment Analysis</h2>
+        <p>What is Sentiment Analysis? Sentiment Analysis is a use case of Natural Language Processing (NLP) and comes under the category of text classification. To put it simply, Sentiment Analysis involves classifying a text into various sentiments, such as positive or negative, Happy, Sad or Neutral, etc.</p>
+      </div>
+
+      <div class="row" style="text-align: center;justify-content: center;">
+        
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="450">
+          <div class="icon-box" style="width: 340px;">
+            <div class="icon"><i class="bx bx-world"></i></div>
+            <h4><a href="{{ url_for('home')}}">IMDB Comments</a></h4>
+          
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="icon-box" style="width: 340px;">
+            <div class="icon"><i class="bx bx-slideshow"></i></div>
+            <h4><a href="{{ url_for('youtube')}}">YouTube Comments </a></h4>
+            
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="icon-box" style="width: 340px;">
+            <div class="icon"><i class="bx bx-comment"></i></div>
+            <h4><a href="{{ url_for('comments')}}">Sentiment Analysis of Comments </a></h4>
+           
+          </div>
+        </div>
+
+        
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+{% endblock %}

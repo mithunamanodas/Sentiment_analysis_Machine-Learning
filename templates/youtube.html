@@ -1,0 +1,73 @@
+<!-- <iframe width="500" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+</iframe> -->
+
+{% extends "template.html" %}
+{% block content %}
+
+<section id="contact" class="contact pb-2">
+  <div class="container mb-5">
+
+    <div class="section-title">
+      
+      <h2>Sentiment Analysis of YouTube Comments</h2>
+      
+    </div>
+
+    
+
+    <div class="row aos-init aos-animate justify-center" style="justify-content: center;" data-aos="fade-up">
+
+      
+
+      <div class="col-lg-8 text-center justify-center">
+        <form action="{{ url_for('ytube')}}" method="POST" class="php-email-form">
+          
+          
+          <div class="form-group mt-3" style="border: 1px solid #cc1616;">
+            <input class="form-control" name="Com" rows="6" cols="50" required="required" id="" placeholder="Enter Your YouTube Link Here"></input>
+            
+          </div>
+         
+          <div class="text-center mt-3"><button type="submit" >Get Review</button></div>
+        </form>
+
+        
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section class="pt-0">
+  <div data-target="readme-toc.content" class="Box-body px-5 pb-5">
+  <article class="markdown-body entry-content container-lg" itemprop="text">
+    
+
+<p dir="auto">To perform <strong>sentiment analysis on YouTube comments</strong>, it will take these general steps:</p>
+
+<h3 tabindex="-1" dir="auto" class="mt-4"><em>Data Collection</em></h3>
+<p dir="auto"> You will need to collect the YouTube comments data. You can use the YouTube API or web scraping techniques to gather the comments from the YouTube video.</p>
+
+<h3 tabindex="-1" dir="auto" class="mt-4"><em>Data Preprocessing</em></h3>
+<p dir="auto">The collected data needs to be preprocessed to remove any unwanted data such as HTML tags, URLs, special characters, emojis, and punctuations. You can also remove stopwords (common words like "the", "and", "a", etc.) and perform stemming or lemmatization to convert words to their base form.</p>
+
+<h3 tabindex="-1" dir="auto" class="mt-4"><em>Sentiment Analysis</em></h3>
+<p dir="auto"> Once you have preprocessed the data, you can use a pre-trained sentiment analysis model to classify each comment as positive, negative, or neutral. Alternatively, you can train your own sentiment analysis model using machine learning techniques.</p>
+
+<h3 tabindex="-1" dir="auto" class="mt-4"><em>Visualization</em></h3>
+<p dir="auto">Finally, you can visualize the sentiment analysis results using various charts and graphs like bar charts, pie charts, or word clouds. This will help you understand the overall sentiment of the comments.</p>
+
+
+
+<h2 tabindex="-1" dir="auto" class="mt-4">Models Performance Summary</h2>
+<p dir="auto">There are many tools and libraries available that can help you perform sentiment analysis on YouTube comments. Some of the popular ones are NLTK, TextBlob, VADER, and IBM Watson. You can also use programming languages like Python or R to write your own sentiment analysis code.</p>
+<p dir="auto">It's important to note that sentiment analysis is not always accurate and can be influenced by various factors like sarcasm, irony, and context. Therefore, it's always recommended to manually check a sample of comments to ensure the accuracy of the sentiment analysis results.</p>
+
+
+</article>
+</div>
+
+
+</section>
+{% endblock %}
+

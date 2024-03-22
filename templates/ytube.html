@@ -1,0 +1,126 @@
+
+{% extends "template.html" %}
+{% block content %}
+<style>
+  table thead tr{
+    text-align: center !important;
+  }
+  table thead tr th{
+    padding: 14px;
+    border: 1px solid;
+  }
+  table tbody tr td{
+    padding: 8px;
+    border: 1px solid;
+  }
+  table tbody tr th{
+    padding: 8px;
+    border: 1px solid;
+  }
+</style>
+<section id="pricing" class="pricing">
+  <div class="container">
+
+    <div class="section-title">
+      
+      <h2>Total percentage </h2>
+      <p>calculate the percentage of sentiments</p>
+    </div>
+
+    <div class="row">
+
+      
+
+      
+
+      <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">
+        <div class="box">
+          <h3>Positive</h3>
+          <h4>{{data1['percent']['positive']}}<sup style="margin: 6px;">%</sup></h4>
+          
+          
+        </div>
+      </div><div class="col-lg-4 col-md-6 mt-4 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">
+        <div class="box">
+          <h3>Negative</h3>
+          <h4>{{data1['percent']['negative']}}<sup style="margin: 6px;">%</sup></h4>
+          
+          
+        </div>
+      </div><div class="col-lg-4 col-md-6 mt-4 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">
+        <div class="box">
+          <h3>Neutral</h3>
+          <h4>{{data1['percent']['neutral']}}<sup style="margin: 6px;">%</sup></h4>
+          
+          
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section id="contact" class="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <!-- <span>Sentiment Analysis of YouTube Comments</span> -->
+      <h2>Sentiment Analysis of YouTube Comments</h2>
+      <!-- <h2>{{data1['percent']}}</h2> -->
+      <!-- <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p> -->
+    </div>
+
+    <div class="row" data-aos="fade-up">
+      <div class="col-lg-15">
+        <div class="info-box mb-4">
+          
+          <h3></h3>
+          <iframe width="420" height="345" src={{cUrl}}>
+          </iframe>
+          <p class="mt-3">Open in YouTube: <a href={{URL}} target="_blank">{{URL}}</a></p>
+        </div>
+      </div>
+
+      
+
+    </div>
+
+    <div class="row text-center justify-center" data-aos="fade-up">
+
+     <!--  <table class="table table-striped table-dark"> -->
+      <!--   <thead>
+          <tr>
+            
+            <th scope="col">Comment</th>
+            <th scope="col">Sentiment</th>
+            
+          </tr>
+        </thead>
+       <tbody>
+        
+        <tr>
+          {% for row in data1['data'] %}
+          
+          <td>{{ row[0] }}</td>
+          
+          {% endfor %}
+        </tr>
+        
+        </tbody>  -->
+        {% for table in tables %}
+        <h2>{{titles[loop.index]}}</h2>                            
+        {{ table|safe }}
+        {% endfor %}       
+      <!-- </table> -->
+
+      
+
+    </div>
+
+  </div>
+</section><!-- End Contact Section -->
+<!-- End #main -->
+
+{% endblock %}
